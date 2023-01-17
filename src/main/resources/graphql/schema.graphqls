@@ -1,0 +1,30 @@
+type Query
+{
+    getAllBooks:[BookDTO]
+    getSingleBook(bookId:Int):BookDTO
+}
+
+
+type BookDTO
+{
+    id:ID!
+    title:String
+    description:String
+    author:String
+    price:Float
+    pages:Int
+}
+
+type Mutation
+{
+    createBook(bookInput:BookInput):BookDTO
+}
+
+input BookInput
+{
+    title:String
+    description:String
+    author:String
+    price:Float
+    pages:Int
+}
